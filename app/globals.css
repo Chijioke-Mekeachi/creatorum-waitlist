@@ -27,27 +27,41 @@ body {
     radial-gradient(1200px 700px at 15% 10%, rgba(10, 107, 67, 0.18), transparent 55%),
     radial-gradient(900px 600px at 85% 30%, rgba(15, 183, 171, 0.16), transparent 60%),
     linear-gradient(180deg, var(--bg1), var(--bg0));
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
-    "Segoe UI Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", ui-sans-serif, system-ui, Segoe UI,
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .homeShell {
   min-height: 100dvh;
-  color: rgba(245, 255, 251, 0.96);
-  background:
-    radial-gradient(1100px 700px at 14% 8%, rgba(15, 183, 171, 0.18), transparent 55%),
-    radial-gradient(900px 680px at 88% 16%, rgba(10, 107, 67, 0.55), transparent 60%),
-    radial-gradient(700px 520px at 30% 92%, rgba(10, 107, 67, 0.38), transparent 55%),
-    linear-gradient(180deg, #04140d, #062418 55%, #04140d);
+  color: rgba(245, 255, 251, 0.98);
+  background: linear-gradient(180deg, #6b9f90 0%, #32d489 55%, #36dd91 100%);
+  overflow-x: hidden;
 }
 
 .homeShell .header {
-  background: rgba(4, 20, 13, 0.72);
-  border-bottom: 1px solid rgba(245, 255, 251, 0.12);
+  background: transparent;
+  border-bottom: 0;
+  backdrop-filter: none;
 }
 
 .homeShell .brand {
-  color: rgba(245, 255, 251, 0.98);
+  color: rgba(6, 22, 16, 0.82);
+  font-weight: 800;
+}
+
+.homeShell .headerInner {
+  padding-top: calc(12px + env(safe-area-inset-top));
+  padding-bottom: 10px;
+}
+
+.homeShell .navDesktop {
+  display: none;
+}
+
+.homeShell .navMobile {
+  display: block;
 }
 
 .homeShell .navLink {
@@ -60,12 +74,14 @@ body {
 }
 
 .homeShell .hamburgerBtn {
-  background: rgba(4, 20, 13, 0.6);
-  border: 1px solid rgba(245, 255, 251, 0.14);
+  background: transparent;
+  border: 0;
+  width: 44px;
+  height: 44px;
 }
 
 .homeShell .hamburgerIcon span {
-  background: rgba(245, 255, 251, 0.82);
+  background: rgba(6, 22, 16, 0.68);
 }
 
 .homeShell .mobileDropdown {
@@ -94,15 +110,106 @@ body {
   color: rgba(245, 255, 251, 0.76);
 }
 
-.homeShell .heroCard {
-  background: rgba(4, 20, 13, 0.38);
-  border: 1px solid rgba(245, 255, 251, 0.12);
-  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.36);
+.homeMain {
+  padding: 10px 0 22px;
 }
 
-.homeShell .heroImage {
-  border: 1px solid rgba(245, 255, 251, 0.12);
+.homeShell .container {
+  max-width: 430px;
+  padding: 0 16px;
+}
+
+.homeContent {
+  min-height: calc(100dvh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.homeTitle {
+  margin: 0;
+  font-size: clamp(32px, 8vw, 48px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  max-width: 18ch;
+  color: rgba(245, 255, 251, 0.98);
+  font-weight: 800;
+}
+
+.homeSubtitle {
+  margin: 0;
+  max-width: 48ch;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(245, 255, 251, 0.86);
+}
+
+.homeMedia {
+  width: min(420px, 100%);
+  padding: 0;
+}
+
+.homeMediaCard {
+  padding: 0;
+  border-radius: 18px;
+  background: transparent;
+  border: 0;
+}
+
+.homeMediaImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.homeActions {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  padding-top: 10px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+}
+
+.homeJoinBtn {
+  width: min(332px, calc(100% - 56px));
+  border: 1px solid rgba(245, 255, 251, 0.18);
+  background: linear-gradient(180deg, rgba(35, 35, 39, 0.94), rgba(16, 16, 18, 0.94));
+  color: rgba(245, 255, 251, 0.96);
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 740;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 20px 66px rgba(0, 0, 0, 0.34);
+  transition: transform 120ms ease, background 120ms ease, opacity 120ms ease;
+}
+
+.homeJoinBtn:hover {
+  background: linear-gradient(180deg, rgba(35, 35, 39, 0.98), rgba(16, 16, 18, 0.98));
+}
+
+.homeJoinBtn:active {
+  transform: translateY(1px);
+}
+
+.homeMeta {
+  font-size: 12px;
+  color: rgba(245, 255, 251, 0.86);
+}
+
+.homeSwipe {
+  margin-top: 6px;
+  font-size: 11px;
+  color: rgba(245, 255, 251, 0.74);
 }
 
 a {
@@ -138,7 +245,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
   padding: 14px 0;
-} 
+}
 
 .brand {
   font-weight: 800;
