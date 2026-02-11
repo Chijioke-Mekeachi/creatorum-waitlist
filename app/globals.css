@@ -206,6 +206,45 @@ body {
   color: rgba(245, 255, 251, 0.86);
 }
 
+.homeSocial {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.homeSocialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 255, 251, 0.18);
+  background: rgba(0, 0, 0, 0.14);
+  color: rgba(245, 255, 251, 0.92);
+  font-size: 12px;
+  line-height: 1;
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.homeSocialLink:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.homeSocialLink:active {
+  transform: translateY(1px);
+}
+
+.homeSocialPlatform {
+  font-weight: 720;
+}
+
+.homeSocialHandle {
+  color: rgba(245, 255, 251, 0.8);
+}
+
 .homeSwipe {
   margin-top: 6px;
   font-size: 11px;

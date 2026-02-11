@@ -9,6 +9,11 @@ const HERO_TITLE_BOTTOM = "modern creators";
 const HERO_SUBTITLE =
   "Creatorum is a creator-centric platform that helps you monetize your content, resell products, access brand deals and understand your performance - all in one platform.";
 
+const SOCIAL_LINKS = [
+  { label: "X", href: "https://x.com/Creatorum_hub", handle: "@Creatorum_hub" },
+  { label: "Instagram", href: "https://www.instagram.com/creatorum_hub?igsh=MW1iaDRzdmk1Z2ljbQ==", handle: "@creatorum_hub" }
+] as const;
+
 export default function HomePage() {
   const [open, setOpen] = useState(false);
 
@@ -39,6 +44,21 @@ export default function HomePage() {
                 Join the Waitlist!
               </button>
               <div className="homeMeta">Early access opening soon.</div>
+              <div className="homeSocial" aria-label="Creatorum social links">
+                {SOCIAL_LINKS.map((link) => (
+                  <a
+                    key={link.label}
+                    className="homeSocialLink"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow Creatorum on ${link.label} (${link.handle})`}
+                  >
+                    <span className="homeSocialPlatform">{link.label}</span>
+                    <span className="homeSocialHandle">{link.handle}</span>
+                  </a>
+                ))}
+              </div>
               <div className="homeSwipe">Swipe to view more</div>
             </div>
           </section>
